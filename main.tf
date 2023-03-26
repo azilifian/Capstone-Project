@@ -40,3 +40,9 @@ resource "aws_lb_target_group" "target_group" {
     path = "/health"
   }
 }
+
+resource "aws_eip" "eip" {
+  vpc      = true
+  instance = aws_instance.web.id
+}
+
